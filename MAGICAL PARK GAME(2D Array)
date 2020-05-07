@@ -1,0 +1,59 @@
+/*Piyush enters the park with strength S. The park is filled with some obstacles denoted by ‘.’ , some magical beans denoted by ‘*’ and some blockades denoted as ‘#’. If he encounters an obstacle (.) , strength decreases by 2. If he encounters a magic bean (' * ') , his strength increases by 5. Piyush can only walk row wise, so he starts from left of a row and moves towards right and he does this for every row. However when he encounters a blockade (#) , he cannot go any further in his current row and simply jumps to the start of a new line without losing any strength. Piyush requires a strength of 1 for every step. His strength should always be greater than K while traversing or else Piyush will get lost. Assume that Piyush can shift immediately from last of one row to the start of next one without loss of any strength,
+help out Piyush to escape the park. His escape is successful if he is able to return home with atleast K strength.*/
+
+#include<iostream>
+void magical_park(char arr[][100],int n, int m,int k,int s);
+using namespace std;
+int main() {
+	int n,m,k,s,i,j;
+	char arr[100][100];
+	char ch;
+	cin>>n>>m>>k>>s;
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			cin>>arr[i][j];
+		}
+	}
+	magical_park(arr,n,m,k,s);
+	return 0;
+}
+	void magical_park(char arr[][100],int n, int m,int k,int s){
+		int i,j;
+		char ch;
+	bool success=true;	
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			ch=arr[i][j];
+			if(s<k)
+			{
+				cout<<"No";
+				success=false;
+				break;
+			}
+			if(ch=='*')
+			{
+				s=s+5;
+			}
+			else if(ch=='.')
+			s=s-2;
+
+			else 
+				break;
+
+				if(j!=n-1)
+				s--;
+		}
+	}
+	if(success)
+	{
+		cout<<"Yes"<<endl;
+		cout<<s;
+	}
+	else cout<<"No"<<endl;
+
+	
+}
