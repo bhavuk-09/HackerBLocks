@@ -30,7 +30,7 @@ int main() {
 			ch=arr[i][j];
 			if(s<k)
 			{
-				cout<<"No";
+				
 				success=false;
 				break;
 			}
@@ -54,6 +54,4 @@ int main() {
 		cout<<s;
 	}
 	else cout<<"No"<<endl;
-
-	
 }
