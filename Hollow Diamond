@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int i,rows,n;
+	cin>>n;
+	//1st component
+	for(i=0;i<(2*n-1);i++)
+	cout<<"*";
+	cout<<endl;
+	int c=n;
+	//2nd component
+	for(rows=1;rows<=c-1;rows++,n--)
+	{   
+		for(i=1;i<n;i++)
+		{
+			cout<<"*";
+		}
+		//spaces
+		for(i=1;i<2*rows-1;i=i+2)
+		cout<<" ";
+		for(i=1;i<=2*rows-1;i=i+2)
+		cout<<" ";
+		for(i=n-1;i>0;i--)
+		{
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	//3rd component
+	for(rows=c-1;rows>0;rows--)
+	{   
+		for(i=1;i<n;i++)
+		{
+			cout<<"*";
+		}
+		//spaces
+		for(i=1;i<2*rows-1;i=i+2)
+		cout<<" ";
+		for(i=1;i<=2*rows-1;i=i+2)
+		cout<<" ";
+		for(i=n-1;i>0;i--)
+		{
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
