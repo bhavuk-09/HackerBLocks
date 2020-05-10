@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main () {
+	long long int n;
+	int sum=0,p=5;
+	cin>>n;
+	
+	while(n/p>0)
+	{
+		sum=sum+n/p;
+		p=p*5;
+	}
+	cout<<sum;
+
+	return 0;
+}
