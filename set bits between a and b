@@ -1,0 +1,24 @@
+//Author-> Bhavuk Khanna
+#include<iostream>
+using namespace std;
+int main() {
+	int t,a,b;
+	cin>>t;
+	for(int i=0;i<t;i++)
+	{
+		cin>>a>>b;
+		int sum=0,last;
+	for(int i=a;i<=b;i++)
+	{
+		while(i>0)
+		{
+			last=i&1;
+			sum=sum+last;
+			i=i>>1;
+		}
+		
+	}
+	cout<<sum<<endl;
+	}
+	return 0;
+}
